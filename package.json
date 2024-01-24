@@ -1,0 +1,24 @@
+{
+  "name": "dictionary-web-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "glob": "^10.3.10",
+    "vite": "^5.0.8",
+    "vite-plugin-full-reload": "^1.1.0",
+    "vite-plugin-html-inject": "^1.1.2"
+  },
+  "dependencies": {
+    "modern-normalize": "^2.0.0",
+    "reset-css": "^5.0.2"
+  }
+}
