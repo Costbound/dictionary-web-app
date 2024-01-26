@@ -1,0 +1,139 @@
+%title {
+    font-size: 18px;
+    font-weight: 700;
+}
+%title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+%meaning-title {
+    color: $dark-grey;
+    font-size: 16px;
+    margin-bottom: 17px;
+}
+%spliter {
+    background-color: $grey;
+    height: 1px;
+    width: 100%;
+}
+%item {
+    line-height: 1.6;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 13px;
+}
+%item-circle {
+    background-color: $purple;
+    min-width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.section-result {
+    margin-bottom: 85px;
+}
+.result__result-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.result__title {
+    font-size: 32px;
+    font-weight: 700;
+}
+.result__transcription {
+    color: $purple;
+    font-size: 18px;
+    line-height: 1.33;
+}
+.result__play-icon {
+    width: 48px;
+    height: 48px;
+}
+
+// Noun
+.result__noun-title-wrapper {
+    @extend %title-wrapper;
+    .result__noun-title {
+        @extend %title;
+    }
+    .result__noun-spliter {
+        @extend %spliter;
+    }
+}
+.result__noun-meaning-title {
+    @extend %meaning-title;
+}
+.result__noun-item {
+    @extend %item;
+    .result__noun-item-circle {
+        @extend %item-circle;
+    }
+}
+.result__noun-synonyms {
+    @extend %meaning-title;
+    margin-bottom: 33px;
+    .result__noun-synonyms-span {
+        margin-left: 24px;
+        color: $purple;
+        font-weight: 700;
+    }
+}
+
+// Verb
+.result__verb-title-wrapper {
+    @extend %title-wrapper;
+    .result__verb-title {
+        @extend %title;
+    }
+    .result__verb-spliter {
+        @extend %spliter;
+    }
+}
+.result__verb-meaning-title {
+    @extend %meaning-title;
+}
+.result__verb-item {
+    @extend %item;
+    .result__verb-item-circle {
+        @extend %item-circle;
+    }
+}
+.result__verb-example {
+    @extend %meaning-title;
+    margin-bottom: 32px;
+    margin-left: 25px;
+}
+
+.result__spliter {
+    @extend %spliter;
+    margin-bottom: 24px;
+}
+
+// Source
+.result__src-title {
+    display: inline-block;
+    color: $dark-grey;
+    font-size: 14px;
+    line-height: 1.2;
+    border-bottom: 1px solid $dark-grey;
+    margin-bottom: 8px;
+}
+.result__src-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.result__src-link {
+    font-size: 14px;
+    line-height: normal;
+    text-decoration-line: none;
+    border-bottom: 1px solid $grey;
+}
+.result__src-icon {
+    width: 12px;
+    height: 12px;
+}

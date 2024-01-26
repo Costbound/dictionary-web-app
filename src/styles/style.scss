@@ -1,7 +1,42 @@
 @import url("../../node_modules/reset-css/reset.css");
 @import url("../../node_modules/modern-normalize/modern-normalize.css");
-@import 'fonts';
+$dark-grey: #757575;
+$grey: #E9E9E9;
+$light-grey: #F4F4F4;
+$purple: #A445ED;
+$red: #FF5252;
+$black-bg: #050505;
+
 
 body {
-    
+    font-size: 15px;
+    line-height: 1.6;
 }
+.section {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.button {
+    cursor: pointer;
+    display: block;
+    border: none;
+    background-color: transparent;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+@import 'themes-and-fonts';
+@import 'header';
+@import 'hero';
+@import 'result';

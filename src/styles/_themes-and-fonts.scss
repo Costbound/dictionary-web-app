@@ -1,0 +1,65 @@
+// Fonts
+.body_sans-serif {
+    font-family: 'Inter', sans-serif;
+    .result__noun-title {
+        font-style: italic;
+    }
+}
+.body_serif {
+    font-family: 'Lora', serif;
+    .result__noun-title {
+        font-style: italic;
+    }
+}
+.body_mono {
+    font-family: 'Inconsolata', monospace;
+}
+
+// Themes
+.body_light {
+    background-color: #fff;
+    color: #2D2D2D;
+    .header__font-selector-open-btn {
+        color: #2D2D2D;
+    }
+    .header__font-selector-list {
+        background-color: #fff;
+        box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.10);
+        .header__font-selector-btn {
+            color: #2D2D2D;
+        }
+    }
+    .header__moon-icon {
+        stroke: $dark-grey;
+    }
+    .hero__search-input {
+        background-color: $light-grey;
+    }
+    .result__src-link {
+        color: #2D2D2D;
+    }
+}
+
+.body_dark {
+    background-color: $black-bg;
+    color: #fff;
+    .header__font-selector-open-btn {
+        color: #fff;
+    }
+    .header__font-selector-list {
+        background-color: #1F1F1F;
+        box-shadow: 0px 5px 30px 0px #A445ED;        
+        .header__font-selector-btn {
+            color: #fff;
+        }
+    }
+    .header__moon-icon {
+        stroke: $purple;
+    }
+    .hero__search-input {
+        background-color: #1F1F1F;
+    }
+    .result__src-link {
+        color: #fff;
+    }
+}

@@ -4,16 +4,28 @@
             <use href="./assets/images/sprite.svg#icon-logo"></use>
         </svg>
         <div class="header__font-day-night-wrapper">
-            <label class="header__font-selector-lable" >
-                <p class="header__present-font">Sans Serif</p>
-                <svg class="header__font-selector-icon" >
-                    <use href="./assets/images/sprite.svg#icon-arrow-down"></use>
-                </svg>
-            </label>
+            <div class="header__font-selector-wrapper">
+                <button class="header__font-selector-open-btn button" type="button">Sans Serif
+                    <svg class="header__font-selector-icon" >
+                        <use href="./assets/images/sprite.svg#icon-arrow-down"></use>
+                    </svg>
+                </button>
+                <ul class="header__font-selector-list">
+                    <li class="header__font-selector-item">
+                        <button class="header__sans-serif-btn button header__font-selector-btn">Sans Serif</button>
+                    </li>
+                    <li class="header__font-selector-item">
+                        <button class="header__serif-btn button header__font-selector-btn">Serif</button>
+                    </li>
+                    <li class="header__font-selector-item">
+                        <button class="header__mono-btn button header__font-selector-btn">Mono</button>
+                    </li>
+                </ul>
+            </div>
             <div class="header__spliter"></div>
             <div class="header__toggle-wrapper">
-                <label for="day-night" class="header__toggle-lable">
-                    <input class="header__toggle-checkbox" type="checkbox" id="day-night" name="day-night">
+                <input class="header__toggle-checkbox visually-hidden" type="checkbox" id="day-night" name="day-night" value="dark">
+                <label class="header__toggle-lable" for="day-night">
                     <span class="header__toggle-slider"></span>
                 </label>
                 <svg class="header__moon-icon">
