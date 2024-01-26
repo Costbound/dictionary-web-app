@@ -5,91 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="/dictionary-web-app/assets/favicon-32x32-0IxEGFmt.png">
   <title>Frontend Mentor | Dictionary web app</title>
-  <link rel="stylesheet" crossorigin href="/dictionary-web-app/assets/index-9Wtd4SK8.css">
+  <script type="module" crossorigin src="/dictionary-web-app/index.js"></script>
+  <link rel="stylesheet" crossorigin href="/dictionary-web-app/assets/index-IBj8OYA-.css">
 </head>
-<body>
+<body class="body_sans-serif">
   <main class="main">
     <header class="header">
     <div class="header__container content-container">
         <svg class="header__logo">
-            <use href="/dictionary-web-app/assets/sprite-se51F554.svg#icon-logo"></use>
+            <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-logo"></use>
         </svg>
         <div class="header__font-day-night-wrapper">
-            <label class="header__font-selector-lable" >
-                <p class="header__present-font">Sans Serif</p>
-                <svg class="header__font-selector-icon" >
-                    <use href="/dictionary-web-app/assets/sprite-se51F554.svg#icon-arrow-down"></use>
-                </svg>
-            </label>
+            <div class="header__font-selector-wrapper">
+                <button class="header__font-selector-open-btn button" type="button">Sans Serif
+                    <svg class="header__font-selector-icon" >
+                        <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-arrow-down"></use>
+                    </svg>
+                </button>
+                <ul class="header__font-selector-list">
+                    <li class="header__font-selector-item">
+                        <button class="header__sans-serif-btn button header__font-selector-btn">Sans Serif</button>
+                    </li>
+                    <li class="header__font-selector-item">
+                        <button class="header__serif-btn button header__font-selector-btn">Serif</button>
+                    </li>
+                    <li class="header__font-selector-item">
+                        <button class="header__mono-btn button header__font-selector-btn">Mono</button>
+                    </li>
+                </ul>
+            </div>
             <div class="header__spliter"></div>
             <div class="header__toggle-wrapper">
-                <label for="day-night" class="header__toggle-lable">
-                    <input class="header__toggle-checkbox" type="checkbox" id="day-night" name="day-night">
+                <input class="header__toggle-checkbox visually-hidden" type="checkbox" id="day-night" name="day-night" value="dark">
+                <label class="header__toggle-lable" for="day-night">
                     <span class="header__toggle-slider"></span>
                 </label>
                 <svg class="header__moon-icon">
-                    <use href="/dictionary-web-app/assets/sprite-se51F554.svg#icon-moon"></use>
+                    <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-moon"></use>
                 </svg>
             </div>
         </div>
     </div>
 </header>
-    <section class="section-hero">
+    <section class="section-hero section">
     <div class="hero__container content-container">
         <form class="hero__search-form">
             <input class="hero__search-input" type="text">
-            <button class="hero__search-btn">
+            <button class="hero__search-btn button">
                 <svg class="hero__search-icon">
-                    <use href="/dictionary-web-app/assets/sprite-se51F554.svg#icon-search"></use>
+                    <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-search"></use>
                 </svg>
             </button>
         </form>
     </div>
 </section>
-    <section class="section-result">
+    <section class="section-result section">
     <div class="result__container content-container">
         <div class="result__result-wrapper">
             <div class="result__word-wrapper">
                 <h1 class="result__title">keyboard</h1>
                 <p class="result__transcription">/ˈkiːbɔːd/</p>
             </div>
-            <svg class="result__play-icon">
-                <use href="/dictionary-web-app/assets/sprite-se51F554.svg#icon-play" />
-            </svg>
+            <button class="result__play-btn button" type="button">
+                <svg class="result__play-icon">
+                    <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-play" />
+                </svg>
+            </button>
         </div>
         <div class="result__noun-wrapper">
-            <h2 class="result__noun-title">noun</h2>
-            <ul class="result__noun-list">Meaning
+            <div class="result__noun-title-wrapper">
+                <h2 class="result__noun-title">noun</h2>
+                <div class="result__noun-spliter"></div>
+            </div>
+            <h3 class="result__noun-meaning-title">Meaning</h3>
+            <ul class="result__noun-list">
                 <li class="result__noun-item">
+                    <div class="result__noun-item-circle"></div>
                     <p class="result__noun-item-para">(etc.) A set of keys used to operate a typewriter, computer etc.</p>
                 </li>
                 <li class="result__noun-item">
+                    <div class="result__noun-item-circle"></div>
                     <p class="result__noun-item-para">
                         A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys
                         that cause different tones to be produced when struck.
                     </p>
                 </li>
                 <li class="result__noun-item">
+                    <div class="result__noun-item-circle"></div>
                     <p class="result__noun-item-para">
                         A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or
                         separate from the keyboard device.
                     </p>
                 </li>
             </ul>
-            <p class="result__noun-synonyms-para">Synonyms<span class="result__noun-synonyms-span">electronic keyboard</span></p>
+            <h3 class="result__noun-synonyms">Synonyms<span class="result__noun-synonyms-span">electronic keyboard</span></h3>
         </div>
         <div class="result__verb-wrapper">
-            <h2 class="result__verb-title">verb</h2>
+            <div class="result__verb-title-wrapper">
+                <h2 class="result__verb-title">verb</h2>
+                <div class="result__verb-spliter"></div>
+            </div>
+            <h3 class="result__verb-meaning-title">Meaning</h3>
             <ul class="result__verb-list">
                 <li class="result__verb-item">
-                    <h3 class="result__verb-item-title">To type on a computer keyboard.</h3>
-                    <p class="result__verb-item-para">“Keyboarding is the part of this job I hate the most.”</p>
+                    <div class="result__verb-item-circle"></div>
+                    <p class="result__verb-item-para">To type on a computer keyboard.</p>
                 </li>
             </ul>
+            <p class="result__verb-example">“Keyboarding is the part of this job I hate the most.”</p>
         </div>
+        <div class="result__spliter"></div>
         <div class="result__src-wrapper">
             <h2 class="result__src-title">Source</h2>
-            <a class="result__src-link" href="https://en.wiktionary.org/wiki/keyboard" target="_blank">https://en.wiktionary.org/wiki/keyboard</a>
+            <div class="result__src-link-wrapper">
+                <a class="result__src-link" href="https://en.wiktionary.org/wiki/keyboard" target="_blank">https://en.wiktionary.org/wiki/keyboard</a>
+                <svg class="result__src-icon">
+                    <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-new-window"></use>
+                </svg>
+            </div>
         </div>
     </div>
 </section>
