@@ -6,34 +6,36 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/dictionary-web-app/assets/favicon-32x32-0IxEGFmt.png">
   <title>Frontend Mentor | Dictionary web app</title>
   <script type="module" crossorigin src="/dictionary-web-app/index.js"></script>
-  <link rel="stylesheet" crossorigin href="/dictionary-web-app/assets/index-IBj8OYA-.css">
+  <link rel="stylesheet" crossorigin href="/dictionary-web-app/assets/index-O7C6PRVB.css">
 </head>
-<body class="body_sans-serif">
+<body class="body_sans-serif body_light body">
   <main class="main">
     <header class="header">
     <div class="header__container content-container">
         <svg class="header__logo">
-            <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-logo"></use>
+            <use href="/dictionary-web-app/assets/sprite-Ug-WCvcV.svg#icon-logo"></use>
         </svg>
         <div class="header__font-day-night-wrapper">
             <div class="header__font-selector-wrapper">
-                <button class="header__font-selector-open-btn button" type="button">Sans Serif
+                <button class="header__font-selector-open-btn button" type="button">
+                    <p class="header__selected-font-para">Sans Serif</p>
                     <svg class="header__font-selector-icon" >
-                        <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-arrow-down"></use>
+                        <use href="/dictionary-web-app/assets/sprite-Ug-WCvcV.svg#icon-arrow-down"></use>
                     </svg>
                 </button>
                 <ul class="header__font-selector-list">
                     <li class="header__font-selector-item">
-                        <button class="header__sans-serif-btn button header__font-selector-btn">Sans Serif</button>
+                        <button class="header__sans-serif-btn button header__font-selector-btn" type="button">Sans Serif</button>
                     </li>
                     <li class="header__font-selector-item">
-                        <button class="header__serif-btn button header__font-selector-btn">Serif</button>
+                        <button class="header__serif-btn button header__font-selector-btn" type="button">Serif</button>
                     </li>
                     <li class="header__font-selector-item">
-                        <button class="header__mono-btn button header__font-selector-btn">Mono</button>
+                        <button class="header__mono-btn button header__font-selector-btn" type="button">Mono</button>
                     </li>
                 </ul>
             </div>
+            <div class="header__font-selector-backdrop disabled"></div>
             <div class="header__spliter"></div>
             <div class="header__toggle-wrapper">
                 <input class="header__toggle-checkbox visually-hidden" type="checkbox" id="day-night" name="day-night" value="dark">
@@ -41,7 +43,7 @@
                     <span class="header__toggle-slider"></span>
                 </label>
                 <svg class="header__moon-icon">
-                    <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-moon"></use>
+                    <use href="/dictionary-web-app/assets/sprite-Ug-WCvcV.svg#icon-moon"></use>
                 </svg>
             </div>
         </div>
@@ -50,10 +52,11 @@
     <section class="section-hero section">
     <div class="hero__container content-container">
         <form class="hero__search-form">
-            <input class="hero__search-input" type="text">
+            <input class="hero__search-input" type="text" placeholder="Search for any word...">
+            <p class="hero__search-input-err">Whoops, can’t be empty…</p>
             <button class="hero__search-btn button">
                 <svg class="hero__search-icon">
-                    <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-search"></use>
+                    <use href="/dictionary-web-app/assets/sprite-Ug-WCvcV.svg#icon-search"></use>
                 </svg>
             </button>
         </form>
@@ -68,7 +71,7 @@
             </div>
             <button class="result__play-btn button" type="button">
                 <svg class="result__play-icon">
-                    <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-play" />
+                    <use href="/dictionary-web-app/assets/sprite-Ug-WCvcV.svg#icon-play" />
                 </svg>
             </button>
         </div>
@@ -118,10 +121,11 @@
         <div class="result__src-wrapper">
             <h2 class="result__src-title">Source</h2>
             <div class="result__src-link-wrapper">
-                <a class="result__src-link" href="https://en.wiktionary.org/wiki/keyboard" target="_blank">https://en.wiktionary.org/wiki/keyboard</a>
-                <svg class="result__src-icon">
-                    <use href="/dictionary-web-app/assets/sprite-VfIMNdSW.svg#icon-new-window"></use>
-                </svg>
+                <a class="result__src-link" href="https://en.wiktionary.org/wiki/keyboard" target="_blank">https://en.wiktionary.org/wiki/keyboard
+                    <svg class="result__src-icon">
+                        <use href="/dictionary-web-app/assets/sprite-Ug-WCvcV.svg#icon-new-window"></use>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
