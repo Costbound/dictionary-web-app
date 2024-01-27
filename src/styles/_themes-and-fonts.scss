@@ -34,6 +34,11 @@
     }
     .hero__search-input {
         background-color: $light-grey;
+        color: #2D2D2D
+    }
+    .hero__search-input::placeholder {
+        color: #2D2D2D;
+        opacity: 0.25;
     }
     .result__src-link {
         color: #2D2D2D;
@@ -58,6 +63,11 @@
     }
     .hero__search-input {
         background-color: #1F1F1F;
+        color: #fff;
+    }
+    .hero__search-input::placeholder {
+        color: #fff;
+        opacity: 0.25;
     }
     .result__src-link {
         color: #fff;

@@ -11,10 +11,28 @@
     border: none;
     border-radius: 16px;
     outline-offset: 4px;
-    outline-width: 1px;
+    outline-width: 0;
     outline-color: transparent;
     font-size: 16px;
     font-weight: 700;
+    caret-color: $purple;
+    border: 1px solid transparent;
+    transition: border-color 250ms;
+}
+.hero__search-input:focus {
+    border-color: $purple;
+}
+.hero__search-input_error {
+    border-color: $red;
+}
+.hero__search-input-err {
+    color: $red;
+    font-size: 16px;
+    position: absolute;
+    bottom: -27px;
+    left: 10px;
+    opacity: 0;
+    transition: opacity 250ms;
 }
 .hero__search-icon {
     width: 16px;

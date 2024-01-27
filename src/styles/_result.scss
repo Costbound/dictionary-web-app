@@ -49,9 +49,29 @@
     font-size: 18px;
     line-height: 1.33;
 }
-.result__play-icon {
+.result__play-btn {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(164, 69, 237, 0.25);
+    border-radius: 50%;
+    transition: background-color 250ms;
     width: 48px;
     height: 48px;
+    .result__play-icon {
+        width: 13px;
+        height: 13px;
+        fill: $purple;
+        transition: fill 250ms
+    }
+}
+.result__play-btn:hover,
+.result__play-btn:focus {
+    background-color: $purple;
+    .result__play-icon {
+        fill: #fff;
+    }
 }
 
 // Noun
@@ -80,6 +100,10 @@
         margin-left: 24px;
         color: $purple;
         font-weight: 700;
+    }
+    .result__noun-synonyms-span:hover,
+    .result__noun-synonyms-span:focus {
+        border-bottom: 1px solid $purple;
     }
 }
 
@@ -125,15 +149,19 @@
 .result__src-link-wrapper {
     display: flex;
     align-items: center;
-    gap: 9px;
 }
 .result__src-link {
+    position: relative;
     font-size: 14px;
     line-height: normal;
     text-decoration-line: none;
     border-bottom: 1px solid $grey;
 }
 .result__src-icon {
+    position: absolute;
     width: 12px;
     height: 12px;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: -10px;
 }
