@@ -1,22 +1,26 @@
 interface DomObj {
-    body: HTMLBodyElement | null
-    dayNightCheckbox: HTMLInputElement | null
-    form: HTMLFormElement | null
-    [key: string]: HTMLButtonElement | HTMLElement | null
+    body: HTMLBodyElement
+    dayNightCheckbox: HTMLInputElement
+    fontSelectorBackdrop: HTMLDivElement
+    fontsSelectWindow: HTMLUListElement
+    fontOpenBtn: HTMLButtonElement
+    selectedFont: HTMLParagraphElement
+    form: HTMLFormElement
+    resultContainer: HTMLDivElement
 }
 const domElems:DomObj = {
-    body: document.querySelector("body"),
+    body: document.querySelector("body")!,
     // Theme selector
-    dayNightCheckbox: document.querySelector(".header__toggle-checkbox"),
+    dayNightCheckbox: document.querySelector(".header__toggle-checkbox")!,
     // Font selector
-    fontSelectorBackdrop: document.querySelector(".header__font-selector-backdrop"),
-    fontsSelectWindow: document.querySelector(".header__font-selector-list"),
-    fontOpenBtn: document.querySelector(".header__font-selector-open-btn"),
-    selectedFont: document.querySelector(".header__selected-font-para"),
+    fontSelectorBackdrop: document.querySelector(".header__font-selector-backdrop")!,
+    fontsSelectWindow: document.querySelector(".header__font-selector-list")!,
+    fontOpenBtn: document.querySelector(".header__font-selector-open-btn")!,
+    selectedFont: document.querySelector(".header__selected-font-para")!,
     // Form
-    form: document.querySelector(".hero__search-form"),
+    form: document.querySelector(".hero__search-form")!,
     // Result
-    resultContainer: document.querySelector(".result__container"),
+    resultContainer: document.querySelector(".result__container")!,
 }
 
 export const delay = (ms: number) => { return new Promise(resolve => setTimeout(resolve, ms)) }
@@ -28,6 +32,6 @@ export const {
     fontsSelectWindow,
     fontOpenBtn,
     selectedFont,
-    searchInput,
+    form,
     resultContainer,
 } = domElems
