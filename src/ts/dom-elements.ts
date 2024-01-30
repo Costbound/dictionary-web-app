@@ -7,6 +7,8 @@ interface DomObj {
     selectedFont: HTMLParagraphElement
     form: HTMLFormElement
     resultContainer: HTMLDivElement
+    // resultPlayBtn: HTMLButtonElement
+    // resultAudio: HTMLAudioElement
 }
 const domElems:DomObj = {
     body: document.querySelector("body")!,
@@ -21,8 +23,9 @@ const domElems:DomObj = {
     form: document.querySelector(".hero__search-form")!,
     // Result
     resultContainer: document.querySelector(".result__container")!,
+    // resultPlayBtn: document.querySelector(".result__play-btn")!,
+    // resultAudio: document.querySelector(".result__audio")!
 }
-
 export const delay = (ms: number) => { return new Promise(resolve => setTimeout(resolve, ms)) }
 
 export const {
@@ -34,4 +37,6 @@ export const {
     selectedFont,
     form,
     resultContainer,
+    // resultPlayBtn,
+    // resultAudio
 } = domElems

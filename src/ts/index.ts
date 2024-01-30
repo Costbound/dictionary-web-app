@@ -1,14 +1,20 @@
 import axios, { AxiosError, AxiosResponse } from "axios"
 import buildResultSection from "./result-builder"
-import { form } from "./dom-elements"
-import { APIResponseData } from "./result-builder"
+import { form, resultContainer } from "./dom-elements"
+import { resultAudio } from "./result-builder"
 
 form?.addEventListener("submit", async (e) => {
     e.preventDefault()
     const searchInput = form.elements[0] as HTMLInputElement
-    const data: APIResponseData[] | void = await fetchData(searchInput.value)
-    if (data) buildResultSection(data[0])
-    })
+  const data: APIResponseData[] | void = await fetchData(searchInput.value)
+  // const data: APIResponseData[] = testData
+  if (data) resultContainer.innerHTML = buildResultSection(data[0])
+
+  if (resultAudio) {
+    const playBtn: HTMLButtonElement = document.querySelector('.result__play-btn')!
+    playBtn.addEventListener("click", () => {resultAudio?.play()})
+  }
+})
 
 async function fetchData(word: string) {
     return axios(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
@@ -19,74 +25,32 @@ async function fetchData(word: string) {
         .catch((err: AxiosError): void => console.log(err))
 }
 
-const testData: APIResponseData =  {
-    word: "keyboard",
-    phonetic: "/ˈkiːbɔːd/",
-    phonetics: [
-      {
-        text: "/ˈkiːbɔːd/",
-        audio: ""
-      },
-      {
-        text: "/ˈkiːbɔːd/",
-        audio: ""
-      },
-      {
-        text: "/ˈkibɔɹd/",
-        audio: "https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3",
-        sourceUrl: "https://commons.wikimedia.org/w/index.php?curid=1755168",
-        license: {
-          name: "BY-SA 3.0",
-          url: "https://creativecommons.org/licenses/by-sa/3.0"
+export interface APIResponseData {
+    word: string,
+    phonetic: string,
+    phonetics: {
+        text: string,
+        audio: string,
+        sourceUrl?: string,
+        license?: {
+            name: string,
+            url: string
         }
-      }
-    ],
-    meanings: [
-      {
-        partOfSpeech: "noun",
-        definitions: [
-          {
-            definition: "(etc.) A set of keys used to operate a typewriter, computer etc.",
-            synonyms: [],
-            antonyms: []
-          },
-          {
-            definition: "A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.",
-            synonyms: [],
-            antonyms: []
-          },
-          {
-            definition: "A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device.",
-            synonyms: [],
-            antonyms: []
-          }
-        ],
-        synonyms: [
-          "electronic keyboard"
-        ],
-        antonyms: []
-      },
-      {
-        partOfSpeech: "verb",
-        definitions: [
-          {
-            definition: "To type on a computer keyboard.",
-            synonyms: [],
-            antonyms: [],
-            example: "Keyboarding is the part of this job I hate the most."
-          }
-        ],
-        synonyms: [],
-        antonyms: []
-      }
-    ],
+    }[]
+    meanings: {
+        partOfSpeech: string,
+        definitions: {
+            definition: string,
+            synonyms: string[],
+            antonyms: string[],
+            example?: string
+        }[],
+        synonyms: string[]
+        antonyms: string[]
+    }[]
     license: {
-      name: "CC BY-SA 3.0",
-      url: "https://creativecommons.org/licenses/by-sa/3.0"
+      name: string,
+      url: string
     },
-    sourceUrls: [
-      "https://en.wiktionary.org/wiki/keyboard"
-    ]
+    sourceUrls: string[]
   }
-
-
