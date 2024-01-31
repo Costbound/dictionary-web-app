@@ -1,5 +1,10 @@
 import { body, dayNightCheckbox, fontSelectorBackdrop, fontsSelectWindow, fontOpenBtn, selectedFont } from "./dom-elements";
 
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    dayNightCheckbox.setAttribute("checked", "")
+    body.classList.remove("body_light")
+    body.classList.add("body_dark")
+}
 
 dayNightCheckbox.addEventListener("click", themeCheck)
 fontOpenBtn.addEventListener("click", fontsOpenClose)

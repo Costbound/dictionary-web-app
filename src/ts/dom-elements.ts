@@ -1,5 +1,8 @@
 interface DomObj {
     body: HTMLBodyElement
+    logoUse: SVGUseElement
+    loader: HTMLDivElement
+    inputErrMessage: HTMLParagraphElement
     dayNightCheckbox: HTMLInputElement
     fontSelectorBackdrop: HTMLDivElement
     fontsSelectWindow: HTMLUListElement
@@ -7,11 +10,13 @@ interface DomObj {
     selectedFont: HTMLParagraphElement
     form: HTMLFormElement
     resultContainer: HTMLDivElement
-    // resultPlayBtn: HTMLButtonElement
-    // resultAudio: HTMLAudioElement
+    notFound: HTMLDivElement
 }
 const domElems:DomObj = {
     body: document.querySelector("body")!,
+    logoUse: document.querySelector(".header__logo use")!,
+    loader: document.querySelector(".loader")!,
+    inputErrMessage: document.querySelector(".hero__search-input-err")!,
     // Theme selector
     dayNightCheckbox: document.querySelector(".header__toggle-checkbox")!,
     // Font selector
@@ -23,13 +28,15 @@ const domElems:DomObj = {
     form: document.querySelector(".hero__search-form")!,
     // Result
     resultContainer: document.querySelector(".result__container")!,
-    // resultPlayBtn: document.querySelector(".result__play-btn")!,
-    // resultAudio: document.querySelector(".result__audio")!
+    notFound: document.querySelector(".result__not-found-container")!,
 }
 export const delay = (ms: number) => { return new Promise(resolve => setTimeout(resolve, ms)) }
 
 export const {
     body,
+    logoUse,
+    loader,
+    inputErrMessage,
     dayNightCheckbox,
     fontSelectorBackdrop,
     fontsSelectWindow,
@@ -37,6 +44,5 @@ export const {
     selectedFont,
     form,
     resultContainer,
-    // resultPlayBtn,
-    // resultAudio
+    notFound
 } = domElems

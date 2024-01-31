@@ -11,10 +11,31 @@ $black-bg: #050505;
 body {
     font-size: 15px;
     line-height: 1.6;
+    @media (min-width: 768px) {
+        font-size: 18px;
+        line-height: 1.33;
+    }
+}
+img {
+    display: block;
 }
 .section {
     padding-left: 24px;
     padding-right: 24px;
+    @media (min-width: 768px) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+.content-container {
+    margin: 0 auto;
+    @media (max-width: 767px) {
+        max-width: 500px;
+    }
+    @media (min-width: 768px) {
+        max-width: 736px;
+    }
 }
 .button {
     cursor: pointer;
@@ -36,11 +57,13 @@ body {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
-.disabled {
-    display: none;
-}
 
+@import 'loader';
 @import 'themes-and-fonts';
 @import 'header';
 @import 'hero';
 @import 'result';
+
+.disabled {
+    display: none;
+}

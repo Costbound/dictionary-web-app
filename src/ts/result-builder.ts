@@ -1,6 +1,8 @@
 import { APIResponseData } from "."
+import { logoUse } from "./dom-elements"
 export default buildResultSection
-export let resultAudio: HTMLAudioElement | undefined
+export let resultAudio: HTMLAudioElement | null
+const spriteHref: string = logoUse.getAttribute("href")!.slice(0, logoUse.getAttribute("href")?.indexOf("#"))
 
 function buildResultSection(data: APIResponseData): string {
     const { word, phonetic, phonetics, meanings, sourceUrls} = data
@@ -28,19 +30,19 @@ function buildResultMain(word: string, phonetic: string, audio: string | undefin
             </div>
             <button class="result__play-btn button" type="button">
                 <svg class="result__play-icon">
-                    <use href="./assets/images/sprite.svg#icon-play" />
+                    <use href="${spriteHref}#icon-play" />
                 </svg>
             </button>
-            <audio class="result__audio" src="" preload="metadata"></audio>
         </div>`
         resultAudio = new Audio(audio)
     } else {
         result += `<div class="result__result-wrapper">
             <div class="result__word-wrapper">
-                <h1 class="result__title">${word}</h1>
+                <h1 class="result__main-title">${word}</h1>
                 <p class="result__transcription">${phonetic}</p>
             </div>
         </div>`
+        resultAudio = null
     }
     return result
 }
@@ -119,9 +121,9 @@ function buildSource(srcs: string[]) {
             <ul class="result__src-list">`
         srcs.forEach(src => {
             result += `<li class="result__src-item">
-                    <a class="result__src-link" href="${src}">${src}
+                    <a class="result__src-link" href="${src}" target="_blank">${src}
                         <svg class="result__src-icon">
-                            <use href="./assets/images/sprite.svg#icon-new-window"></use>
+                            <use href="${spriteHref}#icon-new-window"></use>
                         </svg>
                     </a>
                 </li>`

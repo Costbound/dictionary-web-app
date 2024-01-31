@@ -1,55 +1,49 @@
-%title {
-    font-size: 18px;
-    font-weight: 700;
-}
-%title-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 32px;
-}
 %meaning-title {
     color: $dark-grey;
     font-size: 16px;
     margin-bottom: 17px;
+    @media (min-width: 768px) {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
 }
 %spliter {
     background-color: $grey;
     height: 1px;
     width: 100%;
 }
-%item {
-    position: relative;
-    line-height: 1.6;
-    margin-bottom: 13px;
-    padding-left: 25px;
-}
-%item-circle {
-    position: absolute;
-    left: 0;
-    background-color: $purple;
-    min-width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    margin-top: 10px;
-}
 .section-result {
     margin-bottom: 85px;
+    @media (min-width: 768px) and (max-width: 1439px) {
+        margin-bottom: 118px;
+    }
+    @media (min-width: 1440px) {
+        margin-bottom: 123px;
+    }
 }
 .result__result-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 32px;
+    @media (min-width: 768px) {
+        margin-bottom: 40px;
+    }
 }
 .result__main-title {
     font-size: 32px;
     font-weight: 700;
+    @media (min-width: 768px) {
+        font-size: 64px;
+    }
 }
 .result__transcription {
     color: $purple;
     font-size: 18px;
     line-height: 1.33;
+    @media (min-width: 768px) {
+        font-size: 24px;
+    }
 }
 .result__play-btn {
     display: flex;
@@ -67,6 +61,14 @@
         fill: $purple;
         transition: fill 250ms
     }
+    @media (min-width: 768px) {
+        width: 75px;
+        height: 75px;
+        .result__play-icon {
+            width: 21px;
+            height: 21px;
+        }
+    }
 }
 .result__play-btn:hover,
 .result__play-btn:focus {
@@ -77,22 +79,47 @@
 }
 
 // Meaning
+.result__wrapper {
+    margin-bottom: 33px;
+    @media (min-width: 768px) {
+        margin-bottom: 40px;
+    }
+}
 .result__title-wrapper {
-    @extend %title-wrapper;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 31px;
     .result__title {
-        @extend %title;
+        font-size: 18px;
+        font-weight: 700;
+        @media (min-width: 768px) {
+            font-size: 24px;
+        }
     }
     .result__spliter {
         @extend %spliter;
+    }
+    @media (min-width: 768px) {
+        margin-bottom: 40px;
     }
 }
 .result__meaning-title {
     @extend %meaning-title;
 }
 .result__item {
-    @extend %item;
+    position: relative;
+    line-height: 1.6;
+    margin-bottom: 13px;
+    padding-left: 25px;
     .result__item-circle {
-        @extend %item-circle;
+        position: absolute;
+        left: 0;
+        background-color: $purple;
+        min-width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        margin-top: 10px;
     }
 }
 .result__synonyms-wrapper,
@@ -105,9 +132,15 @@
     }
     .result__synonyms-para,
     .result__antonyms-para {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
         color: $purple;
         font-size: 16px;
         font-weight: 700;
+        @media (min-width: 768px) {
+            font-size: 20px;
+        }
     }
     .result__synonyms-para:hover,
     .result__synonyms-para:focus,
@@ -118,14 +151,36 @@
 }
 .result__example {
     @extend %meaning-title;
+    font-size: 16px;
     margin-top: 13px;
+    @media (min-width: 768px) {
+        font-size: 18px;
+    }
 }
 .result__end-spliter {
     @extend %spliter;
     margin-bottom: 24px;
 }
+.result__copyed::after {
+    content: "Copied!";
+    position: absolute;
+    right: -80px;
+    color: $dark-grey;
+    opacity: 0;
+    animation: copy 3000ms;
+    @media (min-width: 768px) {
+        right: -120px;
+    }
+}
 
 // Source
+.result__src-wrapper {
+    @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+}
 .result__src-title {
     display: inline-block;
     color: $dark-grey;
@@ -152,5 +207,31 @@
     height: 12px;
     top: 50%;
     transform: translate(50%, -50%);
-    right: -10px;
+    right: -15px;
+}
+
+// Not found
+.result__not-found-container {
+    margin-top: 40px;
+}
+.not-found__sad-smile {
+    margin: 0 auto 35px auto;
+}
+.not-found__title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.not-found__para {
+    color: $dark-grey;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.33;
+}
+
+@keyframes copy {
+    0% {opacity: 0;}
+    30% {opacity: 1;}
+    100% {opacity: 0;}
 }
