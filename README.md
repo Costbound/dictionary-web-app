@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/responsive-dictionary-app-typescript-scss-vite-axios-Pisu2YODrO]
 - Live Site URL: [https://costbound.github.io/dictionary-web-app/]
 
 ## My process
