@@ -9,6 +9,7 @@ $black-bg: #050505;
 
 
 body {
+    overflow-y: scroll;
     font-size: 15px;
     line-height: 1.6;
     @media (min-width: 768px) {

@@ -1,7 +1,9 @@
 %meaning-title {
     color: $dark-grey;
-    font-size: 16px;
-    margin-bottom: 17px;
+    @media (max-width: 767px) {
+        font-size: 16px;
+        margin-bottom: 17px;
+    }
     @media (min-width: 768px) {
         font-size: 20px;
         margin-bottom: 25px;
@@ -13,7 +15,9 @@
     width: 100%;
 }
 .section-result {
-    margin-bottom: 85px;
+    @media (max-width: 767px) {
+        margin-bottom: 85px;
+    }
     @media (min-width: 768px) and (max-width: 1439px) {
         margin-bottom: 118px;
     }
@@ -25,22 +29,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+    @media (max-width: 767px) {
+        margin-bottom: 32px;
+    }
     @media (min-width: 768px) {
         margin-bottom: 40px;
     }
 }
 .result__main-title {
-    font-size: 32px;
     font-weight: 700;
+    @media (max-width: 767px) {
+        font-size: 32px;
+    }
     @media (min-width: 768px) {
         font-size: 64px;
     }
 }
 .result__transcription {
     color: $purple;
-    font-size: 18px;
     line-height: 1.33;
+    @media (max-width: 767px) {
+        font-size: 18px;
+    }
     @media (min-width: 768px) {
         font-size: 24px;
     }
@@ -53,13 +63,17 @@
     background-color: rgba(164, 69, 237, 0.25);
     border-radius: 50%;
     transition: background-color 250ms;
-    width: 48px;
-    height: 48px;
     .result__play-icon {
-        width: 13px;
-        height: 13px;
         fill: $purple;
         transition: fill 250ms
+    }
+    @media (max-width: 768px) {
+        width: 48px;
+        height: 48px;
+        .result__play-icon {
+            width: 13px;
+            height: 13px;
+        }
     }
     @media (min-width: 768px) {
         width: 75px;
@@ -80,7 +94,9 @@
 
 // Meaning
 .result__wrapper {
-    margin-bottom: 33px;
+    @media (max-width: 767px) {
+        margin-bottom: 33px;
+    }
     @media (min-width: 768px) {
         margin-bottom: 40px;
     }
@@ -89,10 +105,14 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 31px;
+    @media (max-width: 767px) {
+        margin-bottom: 31px;
+    }
     .result__title {
-        font-size: 18px;
         font-weight: 700;
+        @media (max-width: 767px) {
+            font-size: 18px;
+        }
         @media (min-width: 768px) {
             font-size: 24px;
         }
@@ -136,8 +156,10 @@
         position: relative;
         display: inline-block;
         color: $purple;
-        font-size: 16px;
         font-weight: 700;
+        @media (max-width: 767px) {
+            font-size: 16px;
+        }
         @media (min-width: 768px) {
             font-size: 20px;
         }
@@ -177,7 +199,7 @@
 .result__src-wrapper {
     @media (min-width: 768px) {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 20px;
     }
 }

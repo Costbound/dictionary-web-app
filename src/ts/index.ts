@@ -53,20 +53,22 @@ async function fetchData(word: string) {
 
 function addSynonymsCopy(): void {
   const synonymsLists: NodeListOf<HTMLUListElement> = document.querySelectorAll(".result__synonyms-list")!
-
-  synonymsLists.forEach((list: HTMLUListElement) : void => {
-    list.addEventListener("click", async (e: MouseEvent): Promise<void> => {
+  synonymsLists.forEach((list: HTMLUListElement): void => {
+    const makeCopy = async (e: MouseEvent): Promise<void> => {
       const target = e.target! as HTMLElement
       if (target.nodeName === "P") {
+        list.removeEventListener("click", makeCopy)
         navigator.clipboard.writeText(target.innerText)
         target.classList.add("result__copyed")
-        await delay(3000)
+        await delay(1500)
         target.classList.remove("result__copyed")
+        list.addEventListener("click", makeCopy)
       }
-    })
+    }
+    list.addEventListener("click", makeCopy)
   })
-
 }
+  
 export interface APIResponseData {
   word: string,
   phonetic: string,
